@@ -1,3 +1,26 @@
+# Contradiction Scoring Model - README
+
+This notebook implements an algorithm to score the level of contradiction between pairs of statements using a pre-trained language model. Below is a breakdown of the functionality, inputs, outputs, and usage instructions.
+
+## Overview
+The algorithm preprocesses text data and uses a pre-trained `roberta-large-mnli` model to detect contradictions between pairs of statements. It first cleans and tokenizes the text by removing symbols, stopwords, and applying lemmatization. The model then takes both the original and preprocessed text to compute contradiction scores. 
+
+The notebook reads data from a CSV file, processes each statement pair, and returns the contradiction scores, allowing comparison between raw and cleaned text for better insights.
+
+## Requirements
+The following libraries are required to run the notebook:
+- `transformers`
+- `pandas`
+- `numpy`
+- `scipy`
+- `sklearn`
+- `spacy`
+- `nltk`
+- `re`
+
+You can install the necessary packages by running:
+
+
 ## Inputs
 The main inputs to this notebook are pairs of text statements that are compared for contradiction.
 

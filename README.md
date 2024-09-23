@@ -20,6 +20,7 @@ The following libraries are required to run the notebook:
 
 You can install the necessary packages by running:
 
+pip install transformers pandas numpy scipy scikit-learn spacy nltk
 
 ## Inputs
 The main inputs to this notebook are pairs of text statements that are compared for contradiction.
@@ -53,3 +54,31 @@ The model assigns one of three possible labels to the comparison:
    Example:
    ```python
    preprocessed_text = preprocess_text(corpus)
+
+3.	Score Contradiction:
+The function get_contradiction_score computes the contradiction score between the two corpora for both raw and preprocessed text.
+Example:
+result = get_contradiction_score(corpus1, corpus2)
+
+4.	Interpret the Result:
+The result will contain a label and a score indicating the level of contradiction, neutrality, or agreement between the texts for both original and cleaned versions.
+
+Notes
+
+	•	This notebook uses the RoBERTa model fine-tuned on a natural language inference task.
+	•	Ensure that the inputs are preprocessed appropriately for accurate results.
+
+Example
+corpus1 = "The sky is blue."
+corpus2 = "The sky is not blue."
+result = get_contradiction_score(corpus1, corpus2)
+print(result)
+
+The output would be a classification label, for instance:
+[{'label': 'CONTRADICTION', 'score': 0.99}]
+
+##Author
+
+This notebook was created for use in natural language processing tasks related to contradiction detection, allowing detailed comparison between raw and cleaned text.
+
+   
